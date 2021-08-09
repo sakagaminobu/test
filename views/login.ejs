@@ -1,0 +1,21 @@
+<h1>ログインページ</h1>
+<ul>
+    <% error.forEach((message) => { %>
+       <li><%= message %></li>
+    <% }) %>
+</ul>
+<form action="/login" method="post">
+    <p>メールアドレス<input type="text" name="email"></p>
+    <p>パスワード<input type="password" name="password"></p>
+    <input type="submit" value="ログイン">
+</form>
+<a href="/signup">アカウントを持っていない方はこちら</a>
+<% const url = locals.jumpTo %>
+<% if (url === '/') { %>
+    <a href="/">topへ</a>
+<% } else if (url === '/buy') { %>
+    <% console.log(contents.id) %>
+    <a href="/detail/<%= contents.id %>">詳細へ</a>
+<% } else if (url === '/host') { %>
+    <a href="/host">管理者ページへ</a>
+<% } %>

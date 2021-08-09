@@ -1,0 +1,12 @@
+<h1>商品情報</h1>
+<ul>
+    <% goods.forEach((contents) => { %> 
+    <form method="get" action="/remove/<%= contents.id %>">
+        <li><%= contents.goods_name %><a href="/operationGoodsDetail/<%=  contents.id %>">詳細</a><input type="submit" value="削除"></li>
+    </form>
+    <% }) %> 
+</ul>
+<form method="get" action="/addGoods">
+    <input type="submit" value="追加">
+</form>
+<a href="/host">管理者ページに戻る</a>

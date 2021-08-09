@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>商品詳細</title>
+        <link>
+    </head>
+    <body>
+        <% goods.forEach((contents) => { %>
+            <h1><%= contents.goods_name %></h1>
+            <p><%= contents.price %>円</p>
+            <p>特徴</p>
+            <ul>
+                <li><%= contents.coment %></li>
+            </ul>
+            <p>寄せられたコメント</p>
+            <ul class="comentList">
+                <% coment.forEach((text) => { %>
+                    <form action="/removeGoods/<%= text.id %>" method="post">
+                        <li><%= text.coment %><input type="submit" value="削除"></li>
+                    </form>
+                <% }) %>
+            </ul>
+            <form action="/hostAddComent/<%= contents.id %>" method="post">
+                <input type="text" name="text">
+                <input type="submit" value="コメントする">
+            </form>
+                <form action="/buy_contents/<%= contents.id %>" methods="get">
+                    <input type="submit" value="購入する">
+                </form>
+        <% }) %>  
+        <a href="/view_goods">商品情報に戻る</a>
+        <script type="text/javascript" src="script.js"></script>
+    </body>
+</html>

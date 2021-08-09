@@ -1,0 +1,13 @@
+<h1>新規登録</h1>
+<ul>
+    <% errors.forEach((error) => { %>
+        <li><%= error %></li>
+    <% }) %>
+</ul>
+<form action="/signup" method="post">
+    <p>名前<input type="text" name="name"></p>
+    <p>メールアドレス<input type="text" name="email"></p>
+    <p>パスワード<input type="password" name="password"></p>
+    <input type="submit" value="登録">
+</form>
+<a href="/">topへ</a>

@@ -1,0 +1,15 @@
+<h1>商品を追加する</h1>
+<% errors.forEach((error) => { %>
+    <p><%= error %></p>
+<% }) %>
+<form action="/insert" method="post">
+    <ul>
+        <li><p>商品名 <input type="text" name="goods_name"></p></li>
+        <li><p>値段  <input type="number" name="price"></p></li>
+        <li><p>特徴</p><textarea rows=3 name="text"></textarea></li>
+    </ul>
+    <input type="submit" value="追加する">
+</form>
+
+<a href="/view_goods">商品管理に戻る</a>
+<a href="/top">一覧へ</a>

@@ -1,0 +1,5 @@
+<h1>商品を消しますか</h1>
+<% goods.forEach((contents) => { %> 
+<p><%= contents.goods_name %></p>
+<p><a href="/removeComplete/<%= contents.id %>">はい</a>   <a href="/view_goods">いいえ</a></p>
+<% }) %>

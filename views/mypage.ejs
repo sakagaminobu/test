@@ -1,0 +1,6 @@
+<h1><%= locals.name %>様　ようこそ</h1>
+<p>購入したもの</p>
+<% goods.forEach((contents) => { %>
+    <p>/ <%= contents.goods_name %></p>
+<% }) %>
+<a href="/">topへ</a>

@@ -1,0 +1,7 @@
+<h1>買い物をする</h1>
+<ul>
+    <% goods.forEach((contents) => { %> 
+    <li><%= contents.goods_name %><a href="/detail/<%= contents.id %>">詳細</a></li>
+    <% }) %> 
+</ul>
+<a href="/">ホームに戻る</a>
